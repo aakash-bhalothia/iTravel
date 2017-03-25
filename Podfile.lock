@@ -1,12 +1,15 @@
 PODS:
-  - Alamofire (4.2.0)
+  - Alamofire (4.4.0)
+  - YelpAPI (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.2.0)
+  - Alamofire (~> 4.4)
+  - YelpAPI
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: aec8bd18aad2290d3d7d66a8a6d0d08fee4d4733
+PODFILE CHECKSUM: 0eaf2777fa6d59c73dc695f36fd99713e8d94e93
 
 COCOAPODS: 1.2.0
