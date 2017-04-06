@@ -7,22 +7,77 @@
 //
 
 import UIKit
+import GooglePlaces
+
+
 
 class ViewController: UIViewController {
-
+    
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    @IBOutlet weak var subView: UIView!
+    var searchtext = "San Francisco, CA, USA"
+    
+    @IBAction func searchLoc(_ sender: Any) {
+        performSegue(withIdentifier: "getSuggestions", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "getSuggestions" {
+                let dest = segue.destination as! SuggestionsViewController
+                    dest.searchText = searchtext
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let x = YelpClient()
-//        x.request()
-        x.requesttomudit()
+        
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        let filter = GMSAutocompleteFilter()
+        filter.type = GMSPlacesAutocompleteTypeFilter.city
+        resultsViewController?.autocompleteFilter = filter
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        subView.addSubview((searchController?.searchBar)!)
+        view.addSubview(subView)
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
+        // When UISearchController presents the results view, present it in
+        // this view controller, not one further up the chain.
+        definesPresentationContext = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+// Handle the user's selection.
+extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        // Do something with the selected place.
+        searchController?.searchBar.text = place.formattedAddress
+        searchtext = place.formattedAddress!
+        print("Place name: \(place.name)")
+        print("Place address: \(place.formattedAddress)")
+        print("Place attributions: \(place.attributions)")
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}

@@ -5,4 +5,6 @@ use_frameworks!
 target 'iTravel' do
     pod 'Alamofire', '~> 4.4'
     pod "YelpAPI"
+    pod 'GooglePlaces'
+    pod 'SwiftyJSON'
 end

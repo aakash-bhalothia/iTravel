@@ -17,6 +17,8 @@
 		CF99028C1E8705880073DD28 /* iTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99028B1E8705880073DD28 /* iTravelUITests.swift */; };
 		CF99029A1E8705C00073DD28 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CF9902991E8705C00073DD28 /* Podfile */; };
 		CF99029C1E8709830073DD28 /* yelpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99029B1E8709830073DD28 /* yelpRequests.swift */; };
+		CF9902A01E9071530073DD28 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */; };
+		CF9902A31E90934A0073DD28 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,7 @@
 		A579693BC8ED93E489DDD09F /* Pods-iTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTravel/Pods-iTravel.release.xcconfig"; sourceTree = "<group>"; };
 		CF9902681E8705880073DD28 /* iTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99026B1E8705880073DD28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF99026D1E8705880073DD28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF99026D1E8705880073DD28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = iTravel/ViewController.swift; sourceTree = "<group>"; };
 		CF9902701E8705880073DD28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF9902721E8705880073DD28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF9902751E8705880073DD28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		CF99028D1E8705880073DD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9902991E8705C00073DD28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CF99029B1E8709830073DD28 /* yelpRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yelpRequests.swift; path = ../yelpRequests.swift; sourceTree = "<group>"; };
+		CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionsViewController.swift; path = iTravel/SuggestionsViewController.swift; sourceTree = "<group>"; };
+		CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionTableViewCell.swift; path = ../SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				CF9902991E8705C00073DD28 /* Podfile */,
+				CF9902A11E9076B60073DD28 /* View Controllers */,
 				CF99026A1E8705880073DD28 /* iTravel */,
 				CF99027F1E8705880073DD28 /* iTravelTests */,
 				CF99028A1E8705880073DD28 /* iTravelUITests */,
@@ -117,9 +122,9 @@
 		CF99026A1E8705880073DD28 /* iTravel */ = {
 			isa = PBXGroup;
 			children = (
+				CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */,
 				CF99029B1E8709830073DD28 /* yelpRequests.swift */,
 				CF99026B1E8705880073DD28 /* AppDelegate.swift */,
-				CF99026D1E8705880073DD28 /* ViewController.swift */,
 				CF99026F1E8705880073DD28 /* Main.storyboard */,
 				CF9902721E8705880073DD28 /* Assets.xcassets */,
 				CF9902741E8705880073DD28 /* LaunchScreen.storyboard */,
@@ -144,6 +149,15 @@
 				CF99028D1E8705880073DD28 /* Info.plist */,
 			);
 			path = iTravelUITests;
+			sourceTree = "<group>";
+		};
+		CF9902A11E9076B60073DD28 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF99026D1E8705880073DD28 /* ViewController.swift */,
+				CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		E9BAC70D70B720067EBBB995 /* Pods */ = {
@@ -341,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF9902A01E9071530073DD28 /* SuggestionsViewController.swift in Sources */,
 				CF99026E1E8705880073DD28 /* ViewController.swift in Sources */,
+				CF9902A31E90934A0073DD28 /* SuggestionTableViewCell.swift in Sources */,
 				CF99026C1E8705880073DD28 /* AppDelegate.swift in Sources */,
 				CF99029C1E8709830073DD28 /* yelpRequests.swift in Sources */,
 			);

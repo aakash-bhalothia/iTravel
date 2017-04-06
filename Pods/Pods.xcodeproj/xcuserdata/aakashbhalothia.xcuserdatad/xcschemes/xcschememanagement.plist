@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YelpAPI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3EFB90ED2DF6086B865456CF26DFBAE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98840521BFF9B135DA2E669E7FEB86EF</key>
+		<key>A9312540FD09EB12393036188D8D66AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3CC9045E56A1D61AD2806BFA86B13A2</key>
+		<key>ED3FA9ED3594C813E1537396A76184F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

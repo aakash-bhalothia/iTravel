@@ -1,0 +1,131 @@
+//
+//  SuggestionsViewController.swift
+//  iTravel
+//
+//  Created by Aakash Bhalothia on 4/1/17.
+//  Copyright © 2017 Aakash Bhalothia. All rights reserved.
+//
+
+import UIKit
+import Foundation
+import Alamofire
+import SwiftyJSON
+
+class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
+    var searchText: String?
+    var arrRes = [[String:AnyObject]]()
+    var checked = [Bool]()
+    var selectedIndexArray = [Int]()
+    var result = JSON(parseJSON: "hi")
+    // var yelpClient = YelpClient
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        request(location: searchText!)
+        // yelpClient.request(location: searchText!)
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
+        var dict = self.arrRes[indexPath.row]
+        cell.name.text = dict["name"] as? String
+        if checked[indexPath.row] == false {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        } else if checked[indexPath.row] == true {
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        checked = [Bool](repeating: false, count: arrRes.count)
+        return self.arrRes.count
+    }
+    
+    
+    func tableView(_ tableView:UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
+        var dict = self.arrRes[indexPath.row]
+        cell.name.text = dict["name"] as? String
+        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        selectedIndexArray.append(indexPath.row)
+//        if checked[indexPath.row] == false{
+//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+//            checked[indexPath.row] = true
+//            selectedIndexArray.append(indexPath.row)
+//        }
+//        else if checked[indexPath.row] == true{
+//            cell.accessoryType = UITableViewCellAccessoryType.none
+//            checked[indexPath.row] = false
+//        }
+    
+    }
+    
+    
+    @IBAction func generatePlan(_ sender: Any) {
+        var categories = [String]()
+        var addresses = [String]()
+        var names = [String]()
+        var day_index = Date()
+        for index in (1...selectedIndexArray.count){
+            var dict = self.result[index]
+            categories.append(dict["name"].stringValue)
+           var val = (dict["name"].stringValue)
+            
+            
+        }
+        
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    
+    func request(location: String) {
+        let url = "https://api.yelp.com/v3/businesses/search"
+        let header: HTTPHeaders = ["Authorization": "Bearer o-sJv-BY1vtPdkbnCDTVyVdX8yxvhdCvvTv--CEPcg_z2Otmaa7qko-vvBOsZ-8AaPjYc6CkArgOWMT180zycCb60u51pjw4gyiYAZCDpq7AXSUf_uqinsajklzUWHYx"]
+        let parameters2 = [
+            "term": "tourist attractions",
+            "location": location,
+            "limit" : 50,
+            "sort_by":"review_count"
+            ] as [String : Any]
+        
+        Alamofire.request(url, parameters: parameters2, headers: header).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let json = JSON(responseData.result.value!)
+                if let resData = json["businesses"].arrayObject {
+                    self.result = JSON(responseData.result.value!)["businesses"]
+                    self.arrRes = resData as! [[String:AnyObject]]
+                }
+                if self.arrRes.count > 0 {
+                    self.tableView.reloadData()
+                }
+                //                print(i['name'] + "," + i['categories'])
+                //                print(i['location']['display_address'])
+                //                name, categories, display address
+            }
+        }
+    }
+
+}
