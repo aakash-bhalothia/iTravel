@@ -60,34 +60,36 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         var dict = self.arrRes[indexPath.row]
         cell.name.text = dict["name"] as? String
-        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        //cell.accessoryType = UITableViewCellAccessoryType.checkmark
         selectedIndexArray.append(indexPath.row)
-//        if checked[indexPath.row] == false{
-//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-//            checked[indexPath.row] = true
-//            selectedIndexArray.append(indexPath.row)
-//        }
-//        else if checked[indexPath.row] == true{
-//            cell.accessoryType = UITableViewCellAccessoryType.none
-//            checked[indexPath.row] = false
-//        }
+        if checked[indexPath.row] == false{
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            checked[indexPath.row] = true
+            tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            selectedIndexArray.append(indexPath.row)
+        }
+        else if checked[indexPath.row] == true{
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            checked[indexPath.row] = false
+        }
     
     }
     
     
     @IBAction func generatePlan(_ sender: Any) {
-        var categories = [String]()
+        var categories = [Any]()
         var addresses = [String]()
         var names = [String]()
-        var day_index = Date()
+        let day_index = getDayIndex()
         for index in (1...selectedIndexArray.count){
             var dict = self.result[index]
-            categories.append(dict["name"].stringValue)
-           var val = (dict["name"].stringValue)
-            
-            
+            names.append(dict["name"].stringValue)
+            let catDict = dict["categories"].arrayValue.map({$0["alias"].stringValue})
+            categories.append(catDict)
+            let addarray = dict["location"]["display_address"].arrayObject as! [String]?
+            addresses.append((addarray?.joined(separator: ", "))!)
         }
-        
+        getOptimalRoute(addresses: addresses, categories: categories, names: names, day_index: day_index)
     }
 
     /*
@@ -99,7 +101,15 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
-    
+    func getDayIndex() -> Int{
+        let dict = ["Sunday": 0, "Monday":1, "Tuesday":2, "Wednesday":3, "Thursday": 4, "Friday": 5, "Saturday":6]
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        let dayInWeek = formatter.string(from: date)
+        return dict[dayInWeek]!
+        
+    }
     
     func request(location: String) {
         let url = "https://api.yelp.com/v3/businesses/search"
@@ -124,6 +134,27 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                 //                print(i['name'] + "," + i['categories'])
                 //                print(i['location']['display_address'])
                 //                name, categories, display address
+            }
+        }
+    }
+    
+    func getOptimalRoute(addresses: [Any], categories: [Any], names: [String], day_index: Int){
+        let url = "https://itravel.pythonanywhere.com/getOptimalRoute"
+        //
+        //        let header: HTTPHeaders = ["Authorization": "Bearer o-sJv-BY1vtPdkbnCDTVyVdX8yxvhdCvvTv--CEPcg_z2Otmaa7qko-vvBOsZ-8AaPjYc6CkArgOWMT180zycCb60u51pjw4gyiYAZCDpq7AXSUf_uqinsajklzUWHYx"]
+        let parameters2 = ["addresses": addresses,
+                           "categories": categories,
+            "names": names,
+            "day_index": day_index,
+        ] as [String : Any]
+        
+        Alamofire.request(url, parameters: parameters2).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
             }
         }
     }
