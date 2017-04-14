@@ -42,11 +42,11 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         var dict = self.arrRes[indexPath.row]
         cell.name.text = dict["name"] as? String
-        if checked[indexPath.row] == false {
-            cell.accessoryType = UITableViewCellAccessoryType.none
-        } else if checked[indexPath.row] == true {
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-        }
+//        if checked[indexPath.row] == false {
+//            cell.accessoryType = UITableViewCellAccessoryType.none
+//        } else if checked[indexPath.row] == true {
+//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+//        }
         return cell
     }
     
@@ -62,16 +62,16 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         cell.name.text = dict["name"] as? String
         //cell.accessoryType = UITableViewCellAccessoryType.checkmark
         selectedIndexArray.append(indexPath.row)
-        if checked[indexPath.row] == false{
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-            checked[indexPath.row] = true
-            tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            selectedIndexArray.append(indexPath.row)
-        }
-        else if checked[indexPath.row] == true{
-            cell.accessoryType = UITableViewCellAccessoryType.none
-            checked[indexPath.row] = false
-        }
+//        if checked[indexPath.row] == false{
+//            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+//            checked[indexPath.row] = true
+//            tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+//            selectedIndexArray.append(indexPath.row)
+//        }
+//        else if checked[indexPath.row] == true{
+//            cell.accessoryType = UITableViewCellAccessoryType.none
+//            checked[indexPath.row] = false
+//        }
     
     }
     
@@ -148,7 +148,11 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             "day_index": day_index,
         ] as [String : Any]
         
-        Alamofire.request(url, parameters: parameters2).responseJSON { response in
+        print(addresses)
+        print(categories)
+        print(names)
+        
+        Alamofire.request(url, parameters: parameters2, encoding: JSONEncoding(options: [])).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
