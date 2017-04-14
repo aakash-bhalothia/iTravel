@@ -83,7 +83,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         var names = [String]()
         let day_index = getDayIndex()
         print(selectedIndexArray)
-        for index in (1...selectedIndexArray.count){
+        for index in selectedIndexArray {
             var dict = self.result[index]
             names.append(dict["name"].stringValue)
             let catDict = dict["categories"].arrayValue.map({$0["alias"].stringValue})
@@ -91,6 +91,10 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             let addarray = dict["location"]["display_address"].arrayObject as! [String]?
             addresses.append((addarray?.joined(separator: ", "))!)
         }
+        
+        print("ADDRESSES!!!! ! ! ! ! ! !")
+        print(addresses)
+        
         getOptimalRoute(addresses: addresses, categories: categories, names: names, day_index: day_index)
     }
 
@@ -144,20 +148,24 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let url = "http://itravel.pythonanywhere.com/getOptimalRoute"
         //
         //        let header: HTTPHeaders = ["Authorization": "Bearer o-sJv-BY1vtPdkbnCDTVyVdX8yxvhdCvvTv--CEPcg_z2Otmaa7qko-vvBOsZ-8AaPjYc6CkArgOWMT180zycCb60u51pjw4gyiYAZCDpq7AXSUf_uqinsajklzUWHYx"]
-        let parameters2 = ["addresses": addresses,
+        let parameters3 = ["addresses": addresses,
                            "categories": categories,
             "names": names,
             "day_index": day_index,
         ] as [String : Any]
         
-        print(addresses)
-        print(categories)
-        print(names)
+//        print(addresses)
+//        print(categories)
+//        print(names)
         
-        Alamofire.request(url, parameters: parameters2, encoding: JSONEncoding(options: [])).responseJSON { response in
+        Alamofire.request(url, parameters: parameters3, encoding: JSONEncoding(options: [])).responseJSON { response in
+            print("RESPONSE REQUEST")
             print(response.request)  // original URL request
+            print("RESPONSE RESPONSE!")
             print(response.response) // HTTP URL response
+            print("RESPONSE DATA!")
             print(response.data)     // server data
+            print("RESPONSE RESULT!")
             print(response.result)   // result of response serialization
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")

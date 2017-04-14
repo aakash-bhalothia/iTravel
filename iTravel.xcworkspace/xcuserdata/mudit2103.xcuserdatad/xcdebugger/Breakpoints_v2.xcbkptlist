@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iTravel/SuggestionsViewController.swift"
+            timestampString = "513844578.262948"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "getOptimalRoute(addresses:categories:names:day_index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTravel.SuggestionsViewController.getOptimalRoute (addresses : Swift.Array&lt;Any&gt;, categories : Swift.Array&lt;Any&gt;, names : Swift.Array&lt;Swift.String&gt;, day_index : Swift.Int) -&gt; ()"
+                  moduleName = "iTravel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mudit2103/Google%20Drive/A%20Spring17/ios/iTravel/iTravel/SuggestionsViewController.swift"
+                  timestampString = "513847347.716857"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "603">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTravel.SuggestionsViewController.(getOptimalRoute (addresses : Swift.Array&lt;Any&gt;, categories : Swift.Array&lt;Any&gt;, names : Swift.Array&lt;Swift.String&gt;, day_index : Swift.Int) -&gt; ()).(closure #1)"
+                  moduleName = "iTravel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mudit2103/Google%20Drive/A%20Spring17/ios/iTravel/iTravel/SuggestionsViewController.swift"
+                  timestampString = "513847347.719802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iTravel/SuggestionsViewController.swift"
+            timestampString = "513847427.826484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "getOptimalRoute(addresses:categories:names:day_index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTravel.SuggestionsViewController.getOptimalRoute (addresses : Swift.Array&lt;Any&gt;, categories : Swift.Array&lt;Any&gt;, names : Swift.Array&lt;Swift.String&gt;, day_index : Swift.Int) -&gt; ()"
+                  moduleName = "iTravel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mudit2103/Google%20Drive/A%20Spring17/ios/iTravel/iTravel/SuggestionsViewController.swift"
+                  timestampString = "513847428.038333"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "603">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTravel.SuggestionsViewController.(getOptimalRoute (addresses : Swift.Array&lt;Any&gt;, categories : Swift.Array&lt;Any&gt;, names : Swift.Array&lt;Swift.String&gt;, day_index : Swift.Int) -&gt; ()).(closure #1)"
+                  moduleName = "iTravel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mudit2103/Google%20Drive/A%20Spring17/ios/iTravel/iTravel/SuggestionsViewController.swift"
+                  timestampString = "513847428.040516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
