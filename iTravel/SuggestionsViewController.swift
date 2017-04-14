@@ -27,6 +27,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         request(location: searchText!)
+        selectedIndexArray = [Int]()
         // yelpClient.request(location: searchText!)
         // Do any additional setup after loading the view.
     }
@@ -60,7 +61,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         var dict = self.arrRes[indexPath.row]
         cell.name.text = dict["name"] as? String
-        //cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        cell.accessoryType = UITableViewCellAccessoryType.checkmark
         selectedIndexArray.append(indexPath.row)
 //        if checked[indexPath.row] == false{
 //            cell.accessoryType = UITableViewCellAccessoryType.checkmark
@@ -81,6 +82,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         var addresses = [String]()
         var names = [String]()
         let day_index = getDayIndex()
+        print(selectedIndexArray)
         for index in (1...selectedIndexArray.count){
             var dict = self.result[index]
             names.append(dict["name"].stringValue)
@@ -139,7 +141,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     }
     
     func getOptimalRoute(addresses: [Any], categories: [Any], names: [String], day_index: Int){
-        let url = "https://itravel.pythonanywhere.com/getOptimalRoute"
+        let url = "http://itravel.pythonanywhere.com/getOptimalRoute"
         //
         //        let header: HTTPHeaders = ["Authorization": "Bearer o-sJv-BY1vtPdkbnCDTVyVdX8yxvhdCvvTv--CEPcg_z2Otmaa7qko-vvBOsZ-8AaPjYc6CkArgOWMT180zycCb60u51pjw4gyiYAZCDpq7AXSUf_uqinsajklzUWHYx"]
         let parameters2 = ["addresses": addresses,
