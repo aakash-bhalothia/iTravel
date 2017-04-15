@@ -148,17 +148,21 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let url = "http://itravel.pythonanywhere.com/getOptimalRoute"
         //
         //        let header: HTTPHeaders = ["Authorization": "Bearer o-sJv-BY1vtPdkbnCDTVyVdX8yxvhdCvvTv--CEPcg_z2Otmaa7qko-vvBOsZ-8AaPjYc6CkArgOWMT180zycCb60u51pjw4gyiYAZCDpq7AXSUf_uqinsajklzUWHYx"]
-        let parameters3 = ["addresses": addresses,
-                           "categories": categories,
-            "names": names,
-            "day_index": day_index,
+        
+        let stringaddr = addresses.description
+        let stringcateg = categories.description
+        
+        let parameters3 = ["addresses": stringaddr,
+                           "categories": stringcateg,
+            "names": names.description,
+            "day_index": day_index.description,
         ] as [String : Any]
         
 //        print(addresses)
 //        print(categories)
 //        print(names)
         
-        Alamofire.request(url, parameters: parameters3, encoding: JSONEncoding(options: [])).responseJSON { response in
+        Alamofire.request(url, parameters: parameters3).responseString { response in
             print("RESPONSE REQUEST")
             print(response.request)  // original URL request
             print("RESPONSE RESPONSE!")
