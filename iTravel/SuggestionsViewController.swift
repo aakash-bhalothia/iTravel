@@ -126,6 +126,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             "limit" : 50,
             "sort_by":"review_count"
             ] as [String : Any]
+        var rest_results = [[String:AnyObject]]()
         
         Alamofire.request(url, parameters: parameters2, headers: header).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -142,8 +143,66 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                 //                name, categories, display address
             }
         }
-    }
+   
+    let parameters3 = [
+        "term": "restaurants",
+        "location": location,
+        "limit" : 50,
+        "sort_by":"review_count"
+        ] as [String : Any]
     
+        Alamofire.request(url, parameters: parameters3, headers: header).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let json = JSON(responseData.result.value!)
+                if let resData = json["businesses"].arrayObject {
+                    self.result = JSON(responseData.result.value!)["businesses"]
+                    rest_results = resData as! [[String:AnyObject]]
+                    for val in rest_results{
+                        self.arrRes.append(val)
+                    }
+                }
+                if rest_results.count > 0 {
+                    self.tableView.reloadData()
+                }
+                //                print(i['name'] + "," + i['categories'])
+                //                print(i['location']['display_address'])
+                //                name, categories, display address
+            }
+        }
+    
+    
+
+    let parameters4 = [
+        "term": "bars",
+        "location": location,
+        "limit" : 50,
+        "sort_by":"review_count"
+        ] as [String : Any]
+        
+        Alamofire.request(url, parameters: parameters4, headers: header).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let json = JSON(responseData.result.value!)
+                if let resData = json["businesses"].arrayObject {
+                    self.result = JSON(responseData.result.value!)["businesses"]
+                    rest_results = resData as! [[String:AnyObject]]
+                    for val in rest_results{
+                        self.arrRes.append(val)
+                    }
+                }
+                if rest_results.count > 0 {
+                    self.tableView.reloadData()
+                }
+                //                print(i['name'] + "," + i['categories'])
+                //                print(i['location']['display_address'])
+                //                name, categories, display address
+            }
+        }
+        
+        
+    }
+
+    
+
     func getOptimalRoute(addresses: [Any], categories: [Any], names: [String], day_index: Int){
         let url = "http://itravel.pythonanywhere.com/getOptimalRoute"
         //
