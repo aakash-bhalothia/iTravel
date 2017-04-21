@@ -43,7 +43,10 @@ class ViewController: UIViewController {
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
         subView.addSubview((searchController?.searchBar)!)
+        searchController?.searchBar.widthAnchor.constraint(equalTo: subView.widthAnchor)
+        searchController?.searchBar.heightAnchor.constraint(equalTo: subView.heightAnchor)
         view.addSubview(subView)
+        searchController?.searchBar.heightAnchor.constraint(equalTo: subView.heightAnchor)
         searchController?.searchBar.sizeToFit()
         searchController?.hidesNavigationBarDuringPresentation = false
         

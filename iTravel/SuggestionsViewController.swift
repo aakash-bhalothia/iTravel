@@ -156,12 +156,10 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                 let json = JSON(responseData.result.value!)
                 if let resData = json["businesses"].arrayObject {
                     self.result = JSON(responseData.result.value!)["businesses"]
-                    rest_results = resData as! [[String:AnyObject]]
-                    for val in rest_results{
-                        self.arrRes.append(val)
-                    }
+                    let second_results = resData as! [[String:AnyObject]]
+                    self.arrRes.append(contentsOf: second_results)
                 }
-                if rest_results.count > 0 {
+                if self.arrRes.count > 0 {
                     self.tableView.reloadData()
                 }
                 //                print(i['name'] + "," + i['categories'])
@@ -184,21 +182,15 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                 let json = JSON(responseData.result.value!)
                 if let resData = json["businesses"].arrayObject {
                     self.result = JSON(responseData.result.value!)["businesses"]
-                    rest_results = resData as! [[String:AnyObject]]
-                    for val in rest_results{
-                        self.arrRes.append(val)
-                    }
+                    let last_results = resData as! [[String:AnyObject]]
+                    self.arrRes.append(contentsOf: last_results)
                 }
-                if rest_results.count > 0 {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
                 //                print(i['name'] + "," + i['categories'])
                 //                print(i['location']['display_address'])
                 //                name, categories, display address
             }
         }
-        
-        
     }
 
     
