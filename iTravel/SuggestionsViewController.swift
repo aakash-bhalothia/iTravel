@@ -61,7 +61,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         var dict = self.arrRes[indexPath.row]
         cell.name.text = dict["name"] as? String
-        cell.accessoryType = UITableViewCellAccessoryType.checkmark
+//        cell.accessoryType = UITableViewCellAccessoryType.checkmark
         selectedIndexArray.append(indexPath.row)
 //        if checked[indexPath.row] == false{
 //            cell.accessoryType = UITableViewCellAccessoryType.checkmark
