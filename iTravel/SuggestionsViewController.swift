@@ -12,19 +12,12 @@ import Alamofire
 import SwiftyJSON
 
 
-fileprivate struct C {
-    struct CellHeight {
-        static let close: CGFloat = 120 // equal or greater foregroundView height
-        static let open: CGFloat = 1000 // equal or greater containerView height
-    }
-}
-
 class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     var city: String?
     var yelpResults = [[String:AnyObject]]()
-    var cellHeightsClosed = [CGFloat]()
-    var cellHeightsOpened = [CGFloat]()
+    
+    
     
     var namesOfSelectedLocations = Set<String>()
     var isDriving: Bool = false
@@ -42,9 +35,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
 
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeightsClosed[indexPath.row]
-    }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         selectedIndexArray = [Int]()
@@ -98,40 +89,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     }
     
     
-    func tableView(_ tableView:UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
-            return
-        }
-        
-        var duration = 0.0
-        if cellHeightsClosed[indexPath.row] == 120 { // open cell
-            cellHeightsClosed[indexPath.row] = 500
-            cell.selectedAnimation(true, animated: true, completion: nil)
-            duration = 0.5
-        } else {// close cell
-            cellHeightsClosed[indexPath.row] = 120
-            cell.selectedAnimation(false, animated: true, completion: nil)
-            duration = 1.1
-        }
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        }, completion: nil)
-        
-        
-
-    }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        if case let cell as FoldingCell = cell {
-            if cellHeightsClosed[indexPath.row] == C.CellHeight.close {
-                cell.selectedAnimation(false, animated: false, completion:nil)
-            } else {
-                cell.selectedAnimation(true, animated: false, completion: nil)
-            }
-        }
-    }
     
     
     // This method is called when the generate button is clicked on.
@@ -207,8 +165,6 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                         self.yelpResults.append(contentsOf: second_results)
                     }
                     if self.yelpResults.count > 0 {
-                        self.cellHeightsClosed = (0...self.yelpResults.count).map { _ in C.CellHeight.close }
-                        self.cellHeightsOpened = (0...self.yelpResults.count).map { _ in C.CellHeight.open }
                         self.tableView.reloadData()
                     }
                     
