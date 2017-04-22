@@ -30,6 +30,11 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         selectedIndexArray = [Int]() // Stores the indices selected from the YELP table created.
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        selectedIndexArray = [Int]()
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
