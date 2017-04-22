@@ -12,12 +12,20 @@ import Alamofire
 import SwiftyJSON
 
 
+fileprivate struct C {
+    struct CellHeight {
+        static let close: CGFloat = 120 // equal or greater foregroundView height
+        static let open: CGFloat = 1000 // equal or greater containerView height
+    }
+}
 
 class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     var city: String?
     var yelpResults = [[String:AnyObject]]()
-    var selectedIndexArray = [Int]()
+    var cellHeightsClosed = [CGFloat]()
+    var cellHeightsOpened = [CGFloat]()
+    
     var namesOfSelectedLocations = Set<String>()
     var isDriving: Bool = false
     
@@ -30,7 +38,12 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         sendYELPRequest(city: city!) // sends request to YELP. Method down below.
         selectedIndexArray = [Int]() // Stores the indices selected from the YELP table created.
         namesOfSelectedLocations = Set<String>()
+        
 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeightsClosed[indexPath.row]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,24 +57,41 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    func addToSelectedIndexArray(index: Int) {
+        selectedIndexArray.append(index)
+    }
     
+    func removeFromSelectedIndexArray(index: Int) {
+        selectedIndexArray.remove(at: selectedIndexArray.index(of: index)!)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         var location = self.yelpResults[indexPath.row]
         cell.name.text = location["name"] as? String
-        let cellText = cell.name.text! as String
-        if (namesOfSelectedLocations.contains(cellText)) {
-            cell.name.text = location["name"] as? String
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+        let row_number = indexPath.row
+        // The following snippet is some delegate stuff that I don't fully understand
+        // It is basically doing the below when the switch 
+        cell.tapAction = { (cell) in
+            if selectedIndexArray.contains(row_number) {
+                self.removeFromSelectedIndexArray(index: row_number)
+            } else {
+                self.addToSelectedIndexArray(index: row_number)
+            }
         }
-        else {
-            cell.name.text = location["name"] as? String
-            cell.accessoryType = UITableViewCellAccessoryType.none
+        
+        
+        if (selectedIndexArray.contains(indexPath.row)) {
+            cell.paperSwitch.setOn(true, animated: true)
+        } else {
+            cell.paperSwitch.setOn(false, animated: false)
         }
         
         return cell
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.yelpResults.count
@@ -69,22 +99,38 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView:UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
-        var location = self.yelpResults[indexPath.row]
-        let locationName = location["name"] as? String
-        cell.name.text = locationName
-        if selectedIndexArray.contains(indexPath.row){
-            let deleteValueAtIndex = selectedIndexArray.index(of: indexPath.row)
-            selectedIndexArray.remove(at: deleteValueAtIndex!)
-            namesOfSelectedLocations.remove(locationName!)
-            cell.accessoryType = UITableViewCellAccessoryType.none
+        guard case let cell as FoldingCell = tableView.cellForRow(at: indexPath) else {
+            return
         }
-        else {
-            selectedIndexArray.append(indexPath.row)
-            namesOfSelectedLocations.insert(locationName!)
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        
+        var duration = 0.0
+        if cellHeightsClosed[indexPath.row] == 120 { // open cell
+            cellHeightsClosed[indexPath.row] = 500
+            cell.selectedAnimation(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {// close cell
+            cellHeightsClosed[indexPath.row] = 120
+            cell.selectedAnimation(false, animated: true, completion: nil)
+            duration = 1.1
         }
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { _ in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
+        
+        
 
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if case let cell as FoldingCell = cell {
+            if cellHeightsClosed[indexPath.row] == C.CellHeight.close {
+                cell.selectedAnimation(false, animated: false, completion:nil)
+            } else {
+                cell.selectedAnimation(true, animated: false, completion: nil)
+            }
+        }
     }
     
     
@@ -161,6 +207,8 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                         self.yelpResults.append(contentsOf: second_results)
                     }
                     if self.yelpResults.count > 0 {
+                        self.cellHeightsClosed = (0...self.yelpResults.count).map { _ in C.CellHeight.close }
+                        self.cellHeightsOpened = (0...self.yelpResults.count).map { _ in C.CellHeight.open }
                         self.tableView.reloadData()
                     }
                     
