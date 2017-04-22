@@ -18,7 +18,8 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     var city: String?
     var yelpResults = [[String:AnyObject]]()
     var selectedIndexArray = [Int]()
-    var result = JSON(parseJSON: "dummyJsonObject")
+    var namesOfSelectedLocations = Set<String>()
+    var isDriving: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,11 +29,13 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         tableView.dataSource = self
         sendYELPRequest(city: city!) // sends request to YELP. Method down below.
         selectedIndexArray = [Int]() // Stores the indices selected from the YELP table created.
+        namesOfSelectedLocations = Set<String>()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         selectedIndexArray = [Int]()
+        namesOfSelectedLocations = Set<String>()
         tableView.reloadData()
     }
 
@@ -45,8 +48,18 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
-        var dict = self.yelpResults[indexPath.row]
-        cell.name.text = dict["name"] as? String
+        var location = self.yelpResults[indexPath.row]
+        cell.name.text = location["name"] as? String
+        let cellText = cell.name.text! as String
+        if (namesOfSelectedLocations.contains(cellText)) {
+            cell.name.text = location["name"] as? String
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+        else {
+            cell.name.text = location["name"] as? String
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        }
+        
         return cell
     }
     
@@ -57,11 +70,23 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     func tableView(_ tableView:UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
-        var dict = self.yelpResults[indexPath.row]
-        cell.name.text = dict["name"] as? String
-        selectedIndexArray.append(indexPath.row)
-    
+        var location = self.yelpResults[indexPath.row]
+        let locationName = location["name"] as? String
+        cell.name.text = locationName
+        if selectedIndexArray.contains(indexPath.row){
+            let deleteValueAtIndex = selectedIndexArray.index(of: indexPath.row)
+            selectedIndexArray.remove(at: deleteValueAtIndex!)
+            namesOfSelectedLocations.remove(locationName!)
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        }
+        else {
+            selectedIndexArray.append(indexPath.row)
+            namesOfSelectedLocations.insert(locationName!)
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+        }
+
     }
+    
     
     // This method is called when the generate button is clicked on.
     @IBAction func generatePlan(_ sender: Any) {
@@ -74,7 +99,6 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         for index in selectedIndexArray {
             let yelpLocationObject = self.yelpResults[index]
             var yelpLocationObjectAsJSON = JSON(yelpLocationObject)
-            
             names.append((yelpLocationObjectAsJSON["name"].stringValue)) // Add the name of the YELP object
             let categoryList = yelpLocationObjectAsJSON["categories"].arrayValue.map({$0["alias"].stringValue}) // TODO: Check things here on.
             categories.append(categoryList)
@@ -159,12 +183,13 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
                            "categories": categoriesAsString,
             "names": names.description,
             "day_index": day_index.description,
+            "is_driving": isDriving
         ] as [String : Any]
         
         
         Alamofire.request(url, parameters: parameters).responseString { response in
-            print("RESPONSE REQUEST")
-            print(response.request)  // original URL request
+//            print("RESPONSE REQUEST")
+//            print(response.request)  // original URL request
             print("RESPONSE RESPONSE!")
             print(response.response) // HTTP URL response
             print("RESPONSE DATA!")

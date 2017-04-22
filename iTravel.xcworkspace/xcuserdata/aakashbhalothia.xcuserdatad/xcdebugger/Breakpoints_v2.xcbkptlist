@@ -161,11 +161,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "generatePlan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -177,11 +177,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "generatePlan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -193,11 +193,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "sendYELPRequest(city:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -209,11 +209,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223">
+            startingLineNumber = "262"
+            endingLineNumber = "262">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -223,11 +223,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219">
+            startingLineNumber = "258"
+            endingLineNumber = "258">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -237,11 +237,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227">
+            startingLineNumber = "266"
+            endingLineNumber = "266">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -251,11 +251,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "sendYELPRequest(city:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -267,11 +267,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226">
+            startingLineNumber = "265"
+            endingLineNumber = "265">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -281,11 +281,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "getOptimalRoute(addresses:categories:names:day_index:)"
             landmarkType = "7">
             <Locations>
@@ -329,11 +329,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197">
+            startingLineNumber = "236"
+            endingLineNumber = "236">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -343,11 +343,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "sendYELPRequest(city:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -359,11 +359,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195">
+            startingLineNumber = "234"
+            endingLineNumber = "234">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -373,11 +373,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "generatePlan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -389,11 +389,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "getYELPParameterWithTerm(terms:city:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -405,11 +405,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "generatePlan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -421,11 +421,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200">
+            startingLineNumber = "239"
+            endingLineNumber = "239">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -467,11 +467,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "getDayIndex()"
             landmarkType = "7">
             <Locations>
@@ -515,11 +515,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203">
+            startingLineNumber = "242"
+            endingLineNumber = "242">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -529,11 +529,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203">
+            startingLineNumber = "242"
+            endingLineNumber = "242">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -543,11 +543,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "generatePlan(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -559,11 +559,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "getDayIndex()"
             landmarkType = "7">
          </BreakpointContent>
@@ -571,15 +571,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "getYELPParameterWithTerm(terms:city:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -591,13 +591,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iTravel/SuggestionsViewController.swift"
-            timestampString = "514516721.734271"
+            timestampString = "514522291.614242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "getOptimalRoute(addresses:categories:names:day_index:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iTravel/SuggestionsViewController.swift"
+            timestampString = "514522844.18659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "SuggestionsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
