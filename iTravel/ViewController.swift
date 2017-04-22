@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         if let identifier = segue.identifier {
             if identifier == "getSuggestions" {
                 let dest = segue.destination as! SuggestionsViewController
-                    dest.searchText = searchtext
+                    dest.city = searchtext
             }
         }
     }

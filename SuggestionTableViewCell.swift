@@ -19,5 +19,8 @@ class SuggestionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
+    
+    
+    
+    
 }

@@ -16,7 +16,6 @@
 		CF9902811E8705880073DD28 /* iTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9902801E8705880073DD28 /* iTravelTests.swift */; };
 		CF99028C1E8705880073DD28 /* iTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99028B1E8705880073DD28 /* iTravelUITests.swift */; };
 		CF99029A1E8705C00073DD28 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CF9902991E8705C00073DD28 /* Podfile */; };
-		CF99029C1E8709830073DD28 /* yelpRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99029B1E8709830073DD28 /* yelpRequests.swift */; };
 		CF9902A01E9071530073DD28 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */; };
 		CF9902A31E90934A0073DD28 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		CF99028B1E8705880073DD28 /* iTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravelUITests.swift; sourceTree = "<group>"; };
 		CF99028D1E8705880073DD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9902991E8705C00073DD28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CF99029B1E8709830073DD28 /* yelpRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yelpRequests.swift; path = ../yelpRequests.swift; sourceTree = "<group>"; };
 		CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionsViewController.swift; path = iTravel/SuggestionsViewController.swift; sourceTree = "<group>"; };
 		CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionTableViewCell.swift; path = ../SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */,
-				CF99029B1E8709830073DD28 /* yelpRequests.swift */,
 				CF99026B1E8705880073DD28 /* AppDelegate.swift */,
 				CF99026F1E8705880073DD28 /* Main.storyboard */,
 				CF9902721E8705880073DD28 /* Assets.xcassets */,
@@ -359,7 +356,6 @@
 				CF99026E1E8705880073DD28 /* ViewController.swift in Sources */,
 				CF9902A31E90934A0073DD28 /* SuggestionTableViewCell.swift in Sources */,
 				CF99026C1E8705880073DD28 /* AppDelegate.swift in Sources */,
-				CF99029C1E8709830073DD28 /* yelpRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
