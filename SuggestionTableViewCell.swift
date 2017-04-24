@@ -10,6 +10,12 @@ import UIKit
 
 class SuggestionTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var paperSwitch: UISwitch!
+    
+    @IBAction func tapAction(_ sender: Any) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

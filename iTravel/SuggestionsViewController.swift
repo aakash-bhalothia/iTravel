@@ -12,17 +12,22 @@ import Alamofire
 import SwiftyJSON
 
 
-class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
     
     var city: String?
     var yelpResults = [[String:AnyObject]]()
+    var selectedIndexArray = [Int]()
+    var filteredLocations = [[String:AnyObject]]()
     
     
-    
-    var namesOfSelectedLocations = Set<String>()
+    var namesOfLocations = [String]()
     var isDriving: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let searchController = UISearchController(searchResultsController: nil)  // Initialize search controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,14 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         tableView.dataSource = self
         sendYELPRequest(city: city!) // sends request to YELP. Method down below.
         selectedIndexArray = [Int]() // Stores the indices selected from the YELP table created.
-        namesOfSelectedLocations = Set<String>()
+        namesOfLocations = [String]()
+        
+        //set search bar properties
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
         
 
     }
@@ -39,7 +51,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         selectedIndexArray = [Int]()
-        namesOfSelectedLocations = Set<String>()
+        namesOfLocations = [String]()
         tableView.reloadData()
     }
 
@@ -58,19 +70,27 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
-        var location = self.yelpResults[indexPath.row]
-        cell.name.text = location["name"] as? String
         
         let row_number = indexPath.row
+        var location = self.yelpResults[row_number]
+        
+        //Select location based on if search Controller is active
+        if searchController.isActive && searchController.searchBar.text != "" {
+            location = self.filteredLocations[row_number]
+        }
+        
+        cell.name.text = location["name"] as? String
+        
+        
         // The following snippet is some delegate stuff that I don't fully understand
         // It is basically doing the below when the switch 
-        cell.tapAction = { (cell) in
+//        cell.tapAction = { (cell) in
             if selectedIndexArray.contains(row_number) {
                 self.removeFromSelectedIndexArray(index: row_number)
             } else {
                 self.addToSelectedIndexArray(index: row_number)
             }
-        }
+//        }
         
         
         if (selectedIndexArray.contains(indexPath.row)) {
@@ -85,8 +105,39 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Change number of rows depending on search results
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredLocations.count
+        }
         return self.yelpResults.count
     }
+    
+    
+    // search bar method - update results
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterLocationForSearchText(searchText: searchText)
+        }
+    }
+    
+    
+    // Get filtered locations - HELPER METHOD Returns search results matching with search text
+    
+    func filterLocationForSearchText(searchText: String) {
+        
+        filteredLocations = self.yelpResults.filter({ (location) -> Bool in
+            let name = location["name"] as! String!
+            return name!.contains(searchText)
+        })
+        
+        tableView.reloadData()
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -172,6 +223,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             }
             
         }
+        
     }
 
     

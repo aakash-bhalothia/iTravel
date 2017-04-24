@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RAMPaperSwitch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3EFB90ED2DF6086B865456CF26DFBAE4</key>
+		<key>261C3F98F79B518714BB954805005178</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9312540FD09EB12393036188D8D66AF</key>
+		<key>B611F85A070A5DFFF83728871D7EC9C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED3FA9ED3594C813E1537396A76184F3</key>
+		<key>D1C0553B56A77F26A742529403AC495E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EEAA23F0288B60E3F8971EF0EEE37A5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

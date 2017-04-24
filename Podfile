@@ -7,4 +7,5 @@ target 'iTravel' do
     pod "YelpAPI"
     pod 'GooglePlaces'
     pod 'SwiftyJSON'
+    pod 'RAMPaperSwitch', '~> 2.0.4'
 end

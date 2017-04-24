@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EEAA23F0288B60E3F8971EF0EEE37A5E'
-               BlueprintName = 'YelpAPI'
+               BlueprintIdentifier = '261C3F98F79B518714BB954805005178'
+               BlueprintName = 'RAMPaperSwitch'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'YelpAPI.framework'>
+               BuildableName = 'RAMPaperSwitch.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
