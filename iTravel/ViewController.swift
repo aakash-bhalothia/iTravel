@@ -13,10 +13,14 @@ import GooglePlaces
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet weak var drivingSwitch: UISwitch!
+    
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
     @IBOutlet weak var subView: UIView!
+    
     var searchtext = "San Francisco, CA, USA"
     
     @IBAction func searchLoc(_ sender: Any) {
@@ -28,6 +32,12 @@ class ViewController: UIViewController {
             if identifier == "getSuggestions" {
                 let dest = segue.destination as! SuggestionsViewController
                     dest.city = searchtext
+                if self.drivingSwitch.isEnabled{
+                    dest.isDriving = true
+                }
+                else {
+                    dest.isDriving = false
+                }
             }
         }
     }

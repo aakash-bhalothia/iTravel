@@ -38,8 +38,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zz-Dn-tYp">
+                                <rect key="frame" x="7" y="311" width="361" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LEx-Ii-7bX"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-hY-g9P">
+                                <rect key="frame" x="68" y="104" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have a car?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rr-NK-ddg">
+                                <rect key="frame" x="54" y="392" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which city are you travelling to?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANR-Wx-jf8">
+                                <rect key="frame" x="66" y="269" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VrV-U1-9Qr">
+                                <rect key="frame" x="251" y="390" width="51" height="31"/>
+                            </switch>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKh-OT-y2H">
-                                <rect key="frame" x="168" y="380" width="40" height="27"/>
+                                <rect key="frame" x="168" y="446" width="40" height="27"/>
                                 <color key="backgroundColor" red="0.89326553096871575" green="0.91247054110105574" blue="0.89615204526262915" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Search">
@@ -49,30 +75,27 @@
                                     <action selector="searchLoc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5IR-DU-BoG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zz-Dn-tYp">
-                                <rect key="frame" x="7" y="304.5" width="361" height="58"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="LEx-Ii-7bX"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-hY-g9P">
-                                <rect key="frame" x="68" y="104" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.33000000000000002" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cKh-OT-y2H" firstAttribute="centerX" secondItem="9Zz-Dn-tYp" secondAttribute="centerX" id="3mZ-cZ-Z5O"/>
                             <constraint firstItem="9Zz-Dn-tYp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8UC-X3-a1V"/>
-                            <constraint firstItem="cKh-OT-y2H" firstAttribute="top" secondItem="9Zz-Dn-tYp" secondAttribute="bottom" constant="17.5" id="QPq-nI-E9U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VrV-U1-9Qr" secondAttribute="trailing" constant="59" id="8bp-iM-99D"/>
+                            <constraint firstItem="0rr-NK-ddg" firstAttribute="top" secondItem="9Zz-Dn-tYp" secondAttribute="bottom" constant="36" id="AAm-OS-N9Q"/>
+                            <constraint firstItem="cKh-OT-y2H" firstAttribute="top" secondItem="9Zz-Dn-tYp" secondAttribute="bottom" constant="89.5" id="QPq-nI-E9U"/>
+                            <constraint firstItem="VrV-U1-9Qr" firstAttribute="leading" secondItem="0rr-NK-ddg" secondAttribute="trailing" constant="43" id="U1k-xk-fCc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Zz-Dn-tYp" secondAttribute="trailing" constant="-9" id="bq6-wq-1Qf"/>
+                            <constraint firstItem="9Zz-Dn-tYp" firstAttribute="top" secondItem="ANR-Wx-jf8" secondAttribute="bottom" constant="21" id="dGE-do-YDh"/>
+                            <constraint firstItem="0rr-NK-ddg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="fjS-Td-g8p"/>
+                            <constraint firstItem="VrV-U1-9Qr" firstAttribute="top" secondItem="9Zz-Dn-tYp" secondAttribute="bottom" constant="34" id="iIn-OU-svp"/>
+                            <constraint firstItem="ANR-Wx-jf8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uLh-eq-xgo"/>
                             <constraint firstItem="9Zz-Dn-tYp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-9" id="wcC-BM-tJ0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kff-e1-git"/>
                     <connections>
+                        <outlet property="drivingSwitch" destination="VrV-U1-9Qr" id="e6K-cv-cx5"/>
                         <outlet property="searchDisplayController" destination="bBk-V6-Kh0" id="IR8-KJ-gf7"/>
                         <outlet property="subView" destination="9Zz-Dn-tYp" id="VJQ-dG-T3B"/>
                         <segue destination="sTy-Ue-Z1x" kind="show" identifier="getSuggestions" id="DQj-j3-b1y"/>
@@ -125,7 +148,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="scI-sL-KtX" id="y4Z-g1-xub">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojy-U2-NY8">
