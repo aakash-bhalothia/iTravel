@@ -152,7 +152,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojy-U2-NY8">
-                                                    <rect key="frame" x="17" y="21" width="350" height="21"/>
+                                                    <rect key="frame" x="17" y="21" width="239" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -163,8 +163,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" red="0.48665381839999999" green="0.72011871839999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
-                                                        <action selector="switchValueChanged:" destination="scI-sL-KtX" eventType="valueChanged" id="cyE-qD-ttd"/>
-                                                        <action selector="tapAction:" destination="scI-sL-KtX" eventType="valueChanged" id="DEP-1r-UCF"/>
+                                                        <action selector="functionAtSwitchingSwitch:" destination="scI-sL-KtX" eventType="valueChanged" id="09k-hS-vi9"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -172,7 +171,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="name" destination="ojy-U2-NY8" id="wmz-sj-dTG"/>
-                                            <outlet property="paperSwitch" destination="MzT-eI-lA2" id="XK0-h4-WfX"/>
+                                            <outlet property="paperSwitch" destination="MzT-eI-lA2" id="pmN-E6-YIu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

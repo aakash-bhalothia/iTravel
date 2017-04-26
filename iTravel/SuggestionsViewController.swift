@@ -37,8 +37,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         selectedIndexArray = [Int]() // Stores the indices selected from the YELP table created.
         namesOfLocations = [String]()
         
-        //set search bar properties
-        
+        // set search bar properties
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -84,13 +83,13 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         
         // The following snippet is some delegate stuff that I don't fully understand
         // It is basically doing the below when the switch 
-//        cell.tapAction = { (cell) in
-            if selectedIndexArray.contains(row_number) {
+        cell.tapAction = { (cell) in
+            if self.selectedIndexArray.contains(row_number) {
                 self.removeFromSelectedIndexArray(index: row_number)
             } else {
                 self.addToSelectedIndexArray(index: row_number)
             }
-//        }
+        }
         
         
         if (selectedIndexArray.contains(indexPath.row)) {

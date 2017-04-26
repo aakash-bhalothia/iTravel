@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             if identifier == "getSuggestions" {
                 let dest = segue.destination as! SuggestionsViewController
                     dest.city = searchtext
-                if self.drivingSwitch.isEnabled{
+                if self.drivingSwitch.isOn{
                     dest.isDriving = true
                 }
                 else {

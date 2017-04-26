@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import RAMPaperSwitch
 
 class SuggestionTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     
-    @IBOutlet weak var paperSwitch: UISwitch!
+    @IBOutlet weak var paperSwitch: RAMPaperSwitch!
     
-    @IBAction func tapAction(_ sender: Any) {
+    @IBAction func functionAtSwitchingSwitch(_ sender: AnyObject) {
+        tapAction?(self)
     }
+    
+    var tapAction: ((UITableViewCell) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +29,7 @@ class SuggestionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
     
     
     
