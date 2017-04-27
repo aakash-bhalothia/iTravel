@@ -24,13 +24,13 @@ class ViewController: UIViewController {
     var searchtext = "San Francisco, CA, USA"
     
     @IBAction func searchLoc(_ sender: Any) {
-        performSegue(withIdentifier: "getSuggestions", sender: nil)
+        performSegue(withIdentifier: "getNewTable", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "getSuggestions" {
-                let dest = segue.destination as! SuggestionsViewController
+            if identifier == "getNewTable" {
+                let dest = segue.destination as! MainTableViewController
                     dest.city = searchtext
                 if self.drivingSwitch.isOn{
                     dest.isDriving = true

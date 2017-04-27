@@ -31,7 +31,4 @@ class SuggestionTableViewCell: UITableViewCell {
     }
     
     
-    
-    
-    
 }

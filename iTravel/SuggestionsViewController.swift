@@ -75,7 +75,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggested", for: indexPath) as! SuggestionTableViewCell
         
-        let row_number = indexPath.row
+        var row_number = indexPath.row
         var location = self.yelpResults[row_number]
         
         //Select location based on if search Controller is active
@@ -84,7 +84,16 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         }
         
         cell.name.text = location["name"] as? String
+        let original_name = location["name"] as? String
+        var count = 0
         
+        for o_location in self.yelpResults {
+            let name = o_location["name"] as? String
+            if name == original_name {
+                row_number = count
+            }
+            count += 1
+        }
         
         // The following snippet is some delegate stuff that I don't fully understand
         // It is basically doing the below when the switch 
@@ -96,8 +105,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             }
         }
         
-        
-        if (selectedIndexArray.contains(indexPath.row)) {
+        if (selectedIndexArray.contains(row_number)) {
             cell.paperSwitch.setOn(true, animated: true)
         } else {
             cell.paperSwitch.setOn(false, animated: false)

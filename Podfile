@@ -9,4 +9,5 @@ target 'iTravel' do
     pod 'SwiftyJSON'
     pod 'RAMPaperSwitch', '~> 2.0.4'
     pod 'expanding-collection', '~> 1.0.3'
+    pod 'FoldingCell', '~> 2.0.3' 
 end

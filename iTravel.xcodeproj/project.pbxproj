@@ -15,9 +15,26 @@
 		CF9902761E8705880073DD28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9902741E8705880073DD28 /* LaunchScreen.storyboard */; };
 		CF9902811E8705880073DD28 /* iTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9902801E8705880073DD28 /* iTravelTests.swift */; };
 		CF99028C1E8705880073DD28 /* iTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99028B1E8705880073DD28 /* iTravelUITests.swift */; };
-		CF99029A1E8705C00073DD28 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CF9902991E8705C00073DD28 /* Podfile */; };
 		CF9902A01E9071530073DD28 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */; };
 		CF9902A31E90934A0073DD28 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */; };
+		CFDD0DD01EB1C2ED004035E3 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD0DAC1EB1C2ED004035E3 /* FoldingCell.swift */; };
+		CFDD0DD11EB1C2ED004035E3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DAE1EB1C2ED004035E3 /* OpenSans-Bold.ttf */; };
+		CFDD0DD21EB1C2ED004035E3 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DAF1EB1C2ED004035E3 /* OpenSans-BoldItalic.ttf */; };
+		CFDD0DD31EB1C2ED004035E3 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB01EB1C2ED004035E3 /* OpenSans-ExtraBold.ttf */; };
+		CFDD0DD41EB1C2ED004035E3 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB11EB1C2ED004035E3 /* OpenSans-ExtraBoldItalic.ttf */; };
+		CFDD0DD51EB1C2ED004035E3 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB21EB1C2ED004035E3 /* OpenSans-Italic.ttf */; };
+		CFDD0DD61EB1C2ED004035E3 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB31EB1C2ED004035E3 /* OpenSans-Light.ttf */; };
+		CFDD0DD71EB1C2ED004035E3 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB41EB1C2ED004035E3 /* OpenSans-LightItalic.ttf */; };
+		CFDD0DD81EB1C2ED004035E3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB51EB1C2ED004035E3 /* OpenSans-Regular.ttf */; };
+		CFDD0DD91EB1C2ED004035E3 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB61EB1C2ED004035E3 /* OpenSans-Semibold.ttf */; };
+		CFDD0DDA1EB1C2ED004035E3 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DB71EB1C2ED004035E3 /* OpenSans-SemiboldItalic.ttf */; };
+		CFDD0DDB1EB1C2ED004035E3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD0DB91EB1C2ED004035E3 /* MainTableViewController.swift */; };
+		CFDD0DDC1EB1C2ED004035E3 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD0DBA1EB1C2ED004035E3 /* DemoCell.swift */; };
+		CFDD0DE11EB1C2ED004035E3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DC11EB1C2ED004035E3 /* Info.plist */; };
+		CFDD0DE21EB1C2ED004035E3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DC41EB1C2ED004035E3 /* Info.plist */; };
+		CFDD0DE31EB1C2ED004035E3 /* FoldingCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD0DC61EB1C2ED004035E3 /* FoldingCellTests.swift */; };
+		CFDD0DE41EB1C2ED004035E3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0DC71EB1C2ED004035E3 /* Info.plist */; };
+		CFDD0EAE1EB1D1D7004035E3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CFDD0EAD1EB1D1D7004035E3 /* Podfile */; };
 		D57A2D1B1EB07E1C00AB65EB /* AnimationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A2CE31EB07E1C00AB65EB /* AnimationBarButton.swift */; };
 		D57A2D1C1EB07E1C00AB65EB /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A2CE41EB07E1C00AB65EB /* Rotatable.swift */; };
 		D57A2D1D1EB07E1C00AB65EB /* CollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A2CE81EB07E1C00AB65EB /* CollectionViewHelper.swift */; };
@@ -75,9 +92,28 @@
 		CF9902871E8705880073DD28 /* iTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF99028B1E8705880073DD28 /* iTravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTravelUITests.swift; sourceTree = "<group>"; };
 		CF99028D1E8705880073DD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF9902991E8705C00073DD28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionsViewController.swift; path = iTravel/SuggestionsViewController.swift; sourceTree = "<group>"; };
 		CF9902A21E90934A0073DD28 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionTableViewCell.swift; path = ../SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		CFDD0DAC1EB1C2ED004035E3 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		CFDD0DAE1EB1C2ED004035E3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		CFDD0DAF1EB1C2ED004035E3 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CFDD0DB01EB1C2ED004035E3 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CFDD0DB11EB1C2ED004035E3 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		CFDD0DB21EB1C2ED004035E3 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		CFDD0DB31EB1C2ED004035E3 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		CFDD0DB41EB1C2ED004035E3 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		CFDD0DB51EB1C2ED004035E3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		CFDD0DB61EB1C2ED004035E3 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		CFDD0DB71EB1C2ED004035E3 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		CFDD0DB91EB1C2ED004035E3 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = "../folding-cell/FoldingCell/FoldingCell/MainTableViewController.swift"; sourceTree = "<group>"; };
+		CFDD0DBA1EB1C2ED004035E3 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		CFDD0DC11EB1C2ED004035E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFDD0DC31EB1C2ED004035E3 /* FoldingCellFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldingCellFramework.h; sourceTree = "<group>"; };
+		CFDD0DC41EB1C2ED004035E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFDD0DC61EB1C2ED004035E3 /* FoldingCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCellTests.swift; sourceTree = "<group>"; };
+		CFDD0DC71EB1C2ED004035E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFDD0DC91EB1C2ED004035E3 /* FoldingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldingCell.h; sourceTree = "<group>"; };
+		CFDD0EAD1EB1D1D7004035E3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Podfile; sourceTree = "<group>"; };
 		D57A2CE31EB07E1C00AB65EB /* AnimationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBarButton.swift; sourceTree = "<group>"; };
 		D57A2CE41EB07E1C00AB65EB /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		D57A2CE81EB07E1C00AB65EB /* CollectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHelper.swift; sourceTree = "<group>"; };
@@ -139,7 +175,11 @@
 		CF99025F1E8705870073DD28 = {
 			isa = PBXGroup;
 			children = (
-				CF9902991E8705C00073DD28 /* Podfile */,
+				CFDD0EAD1EB1D1D7004035E3 /* Podfile */,
+				CFDD0DC21EB1C2ED004035E3 /* FoldingCell */,
+				CFDD0DC51EB1C2ED004035E3 /* FoldingCellFramework */,
+				CFDD0DC81EB1C2ED004035E3 /* FoldingCellTests */,
+				CFDD0DCB1EB1C2ED004035E3 /* FoldingCell */,
 				D57A2D171EB07E1C00AB65EB /* DemoExpandingCollection */,
 				D57A2D1A1EB07E1C00AB65EB /* ExpandingCollection */,
 				CF9902A11E9076B60073DD28 /* View Controllers */,
@@ -196,10 +236,77 @@
 		CF9902A11E9076B60073DD28 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFDD0DB91EB1C2ED004035E3 /* MainTableViewController.swift */,
 				CF99026D1E8705880073DD28 /* ViewController.swift */,
 				CF99029F1E9071530073DD28 /* SuggestionsViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CFDD0DAD1EB1C2ED004035E3 /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DAC1EB1C2ED004035E3 /* FoldingCell.swift */,
+			);
+			path = FoldingCell;
+			sourceTree = "<group>";
+		};
+		CFDD0DB81EB1C2ED004035E3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DAE1EB1C2ED004035E3 /* OpenSans-Bold.ttf */,
+				CFDD0DAF1EB1C2ED004035E3 /* OpenSans-BoldItalic.ttf */,
+				CFDD0DB01EB1C2ED004035E3 /* OpenSans-ExtraBold.ttf */,
+				CFDD0DB11EB1C2ED004035E3 /* OpenSans-ExtraBoldItalic.ttf */,
+				CFDD0DB21EB1C2ED004035E3 /* OpenSans-Italic.ttf */,
+				CFDD0DB31EB1C2ED004035E3 /* OpenSans-Light.ttf */,
+				CFDD0DB41EB1C2ED004035E3 /* OpenSans-LightItalic.ttf */,
+				CFDD0DB51EB1C2ED004035E3 /* OpenSans-Regular.ttf */,
+				CFDD0DB61EB1C2ED004035E3 /* OpenSans-Semibold.ttf */,
+				CFDD0DB71EB1C2ED004035E3 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CFDD0DC21EB1C2ED004035E3 /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DAD1EB1C2ED004035E3 /* FoldingCell */,
+				CFDD0DB81EB1C2ED004035E3 /* Fonts */,
+				CFDD0DBA1EB1C2ED004035E3 /* DemoCell.swift */,
+				CFDD0DC11EB1C2ED004035E3 /* Info.plist */,
+			);
+			name = FoldingCell;
+			path = "../folding-cell/FoldingCell/FoldingCell";
+			sourceTree = "<group>";
+		};
+		CFDD0DC51EB1C2ED004035E3 /* FoldingCellFramework */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DC31EB1C2ED004035E3 /* FoldingCellFramework.h */,
+				CFDD0DC41EB1C2ED004035E3 /* Info.plist */,
+			);
+			name = FoldingCellFramework;
+			path = "../folding-cell/FoldingCell/FoldingCellFramework";
+			sourceTree = "<group>";
+		};
+		CFDD0DC81EB1C2ED004035E3 /* FoldingCellTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DC61EB1C2ED004035E3 /* FoldingCellTests.swift */,
+				CFDD0DC71EB1C2ED004035E3 /* Info.plist */,
+			);
+			name = FoldingCellTests;
+			path = "../folding-cell/FoldingCell/FoldingCellTests";
+			sourceTree = "<group>";
+		};
+		CFDD0DCB1EB1C2ED004035E3 /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD0DC91EB1C2ED004035E3 /* FoldingCell.h */,
+			);
+			name = FoldingCell;
+			path = "../folding-cell/FoldingCell/FoldingCell";
 			sourceTree = "<group>";
 		};
 		D57A2CE51EB07E1C00AB65EB /* Animations */ = {
@@ -553,13 +660,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDD0DD61EB1C2ED004035E3 /* OpenSans-Light.ttf in Resources */,
 				D57A2D2D1EB07E1C00AB65EB /* DemoCollectionViewCell.xib in Resources */,
+				CFDD0DD71EB1C2ED004035E3 /* OpenSans-LightItalic.ttf in Resources */,
 				CF9902761E8705880073DD28 /* LaunchScreen.storyboard in Resources */,
+				CFDD0DD91EB1C2ED004035E3 /* OpenSans-Semibold.ttf in Resources */,
+				CFDD0DDA1EB1C2ED004035E3 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				CFDD0DD11EB1C2ED004035E3 /* OpenSans-Bold.ttf in Resources */,
+				CFDD0DE21EB1C2ED004035E3 /* Info.plist in Resources */,
 				CF9902731E8705880073DD28 /* Assets.xcassets in Resources */,
+				CFDD0DE41EB1C2ED004035E3 /* Info.plist in Resources */,
+				CFDD0EAE1EB1D1D7004035E3 /* Podfile in Resources */,
 				D57A2D311EB07E1C00AB65EB /* Assets.xcassets in Resources */,
-				CF99029A1E8705C00073DD28 /* Podfile in Resources */,
+				CFDD0DD21EB1C2ED004035E3 /* OpenSans-BoldItalic.ttf in Resources */,
 				D57A2D341EB07E1C00AB65EB /* Info.plist in Resources */,
+				CFDD0DD81EB1C2ED004035E3 /* OpenSans-Regular.ttf in Resources */,
 				CF9902711E8705880073DD28 /* Main.storyboard in Resources */,
+				CFDD0DD51EB1C2ED004035E3 /* OpenSans-Italic.ttf in Resources */,
+				CFDD0DD41EB1C2ED004035E3 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				CFDD0DD31EB1C2ED004035E3 /* OpenSans-ExtraBold.ttf in Resources */,
+				CFDD0DE11EB1C2ED004035E3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +756,7 @@
 				CF9902A01E9071530073DD28 /* SuggestionsViewController.swift in Sources */,
 				CF99026E1E8705880073DD28 /* ViewController.swift in Sources */,
 				D57A2D1E1EB07E1C00AB65EB /* StoryboardHelper.swift in Sources */,
+				CFDD0DDB1EB1C2ED004035E3 /* MainTableViewController.swift in Sources */,
 				D57A2D241EB07E1C00AB65EB /* SubviewsForEach.swift in Sources */,
 				D57A2D271EB07E1C00AB65EB /* ConfigurationHelper.swift in Sources */,
 				D57A2D281EB07E1C00AB65EB /* CornerAnimatable.swift in Sources */,
@@ -650,10 +771,13 @@
 				D57A2D251EB07E1C00AB65EB /* ScreenShotHelper.swift in Sources */,
 				CF99026C1E8705880073DD28 /* AppDelegate.swift in Sources */,
 				D57A2D2A1EB07E1C00AB65EB /* TransitionDriver.swift in Sources */,
+				CFDD0DDC1EB1C2ED004035E3 /* DemoCell.swift in Sources */,
+				CFDD0DE31EB1C2ED004035E3 /* FoldingCellTests.swift in Sources */,
 				D57A2D1D1EB07E1C00AB65EB /* CollectionViewHelper.swift in Sources */,
 				D57A2D201EB07E1C00AB65EB /* BasePageCollectionCell.swift in Sources */,
 				D57A2D2E1EB07E1C00AB65EB /* DemoViewController.swift in Sources */,
 				D57A2D221EB07E1C00AB65EB /* PageCollectionView.swift in Sources */,
+				CFDD0DD01EB1C2ED004035E3 /* FoldingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,6 +931,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W93Z494G26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
+				);
 				INFOPLIST_FILE = iTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -823,6 +952,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W93Z494G26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
+				);
 				INFOPLIST_FILE = iTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
