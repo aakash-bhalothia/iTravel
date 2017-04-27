@@ -93,12 +93,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RAMPaperSwitch/RAMPaperSwitch.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YelpAPI/YelpAPI.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/expanding-collection/expanding_collection.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RAMPaperSwitch/RAMPaperSwitch.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YelpAPI/YelpAPI.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/expanding-collection/expanding_collection.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

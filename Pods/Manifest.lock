@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - expanding-collection (1.0.4)
   - GoogleMaps/Base (2.2.0)
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - expanding-collection (~> 1.0.3)
   - GooglePlaces
   - RAMPaperSwitch (~> 2.0.4)
   - SwiftyJSON
@@ -16,12 +18,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   RAMPaperSwitch: d24db52c5423c14812d4069073c3159cffcf3992
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: 593a3e8cbff2e328c8462c7e7464476a8b225681
+PODFILE CHECKSUM: 695720afe6d087c15f280650f166ba4f40de1f2e
 
 COCOAPODS: 1.2.0

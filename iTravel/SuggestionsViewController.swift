@@ -19,9 +19,11 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     var selectedIndexArray = [Int]()
     var filteredLocations = [[String:AnyObject]]()
     
-    
     var namesOfLocations = [String]()
     var isDriving: Bool = false
+    
+    var optimal_route_object = JSON.null
+    var image_urls = [String]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,6 +45,8 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
+        image_urls = [String]()
+        
 
     }
     
@@ -52,6 +56,7 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
         selectedIndexArray = [Int]()
         namesOfLocations = [String]()
         tableView.reloadData()
+        image_urls = [String]()
     }
 
     override func didReceiveMemoryWarning() {
@@ -144,10 +149,13 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
     
     // This method is called when the generate button is clicked on.
     @IBAction func generatePlan(_ sender: Any) {
+        image_urls = [String]()
         var categories = [[String]]() // Categories of the locations to send to python script. Should be an Array of array of strings
         var addresses = [String]() // Addresses to send to python script.
         var names = [String]() // Names of locations as selected on the table view.
         let day_index = getDayIndex() // Current day. 0-Sunday, 6-Saturday
+        
+        
         print("Printing the selected index array: ")
         print(selectedIndexArray)
         for index in selectedIndexArray {
@@ -158,13 +166,105 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             categories.append(categoryList)
             let addressList = yelpLocationObjectAsJSON["location"]["display_address"].arrayObject as! [String]?
             addresses.append((addressList?.joined(separator: ", "))!)
+            image_urls.append(yelpLocationObjectAsJSON["image_url"].stringValue)
         }
         
         print("Printing addresses of the locations that user selected: ")
         print(addresses)
         
-        getOptimalRoute(addresses: addresses, categories: categories, names: names, day_index: day_index) // Calls python script
+        optimal_route_object = getOptimalRoute(addresses: addresses, categories: categories, names: names, day_index: day_index) as! JSON // Calls python script
+        
+        //TODO STUFF HERE
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        
     }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier
+        {
+            if identifier == "goToItinerary"
+            {
+                let dest = segue.destination as! DemoViewController
+                
+                var location_names = optimal_route_object["location_names"].arrayObject
+                var location_addresses = optimal_route_object["addresses"].arrayObject
+                var location_time_to_spend = optimal_route_object["min_time_to_spend"].arrayObject
+                var location_time_to_reach = optimal_route_object["tmin"].arrayObject
+                var location_distances = optimal_route_object["distances"].arrayObject
+                var location_opening_times = optimal_route_object["opening_times"].arrayObject
+                var location_closing_times = optimal_route_object["closing_times"].arrayObject
+
+                
+                //        typealias ItemInfo = (image: UIImage, title: String, address: String, startingTime: String, endingTime: String, locationTiming: String)
+                
+                // TODO: EDIT THINGS HERE :)
+//                dest.items = [(UIImage(), "Exploratorium", "Exploratorium ADDRESS FAM"), (UIImage(), "Pier 39", "Pier 39 ADDRESS FAM")]
+                
+                // TODO : EDIT URLS HERE!
+//                var urls = ["https://s3-media3.fl.yelpcdn.com/bphoto/j04toHe0tYWtICmtPNafmg/o.jpg", "https://s3-media4.fl.yelpcdn.com/bphoto/VV2ZWc44aEr5xLh956ILDA/o.jpg"]
+                
+                // following code is from stack overflow to download images.
+                for i in 0..<image_urls.count
+                {
+                    dest.items.append((UIImage(), "", "", "", "", ""))
+                    dest.items[i].address = location_addresses?[i] as! String
+                    dest.items[i].endingTime = location_closing_times?[i] as! String
+                    dest.items[i].locationTiming = location_opening_times?[i] as! String
+                    dest.items[i].title = location_names?[i] as! String
+                    dest.items[i].startingTime = location_time_to_reach?[i] as! String
+                    
+                    
+                    
+                    let url = URL(string: image_urls[i])!
+                    let session = URLSession(configuration: .default)
+                
+                    let downloadPicTask = session.dataTask(with: url)
+                    { (data, response, error) in
+                        if let e = error
+                        {
+                            print("Error downloading YELP picture: \(e)")
+                        }
+                        else
+                        {
+                            if let res = response as? HTTPURLResponse
+                            {
+                                print("Downloaded YELP picture with response code \(res.statusCode)")
+                                if let imageData = data
+                                {
+                                    dest.items[i].image = UIImage(data: imageData)!
+                                }
+                                else
+                                {
+                                    print("Couldn't get image: Image is nil")
+                                }
+                            }
+                            else
+                            {
+                                print("Couldn't get response code for some reason")
+                            }
+                        }
+                    }
+                    downloadPicTask.resume()
+                }
+            }
+        }
+    }
+
 
     // Returns day index to send to python script.
     func getDayIndex() -> Int{
@@ -227,7 +327,9 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
 
     
 
-    func getOptimalRoute(addresses: [String], categories: [[String]], names: [String], day_index: Int){
+    func getOptimalRoute(addresses: [String], categories: [[String]], names: [String], day_index: Int) -> Any {
+        
+        
         let url = "http://itravel.pythonanywhere.com/getOptimalRoute"
 
         
@@ -241,20 +343,31 @@ class SuggestionsViewController: UIViewController,UITableViewDelegate, UITableVi
             "is_driving": isDriving
         ] as [String : Any]
         
+        var json_return_object = JSON.null
         
-        Alamofire.request(url, parameters: parameters).responseString { response in
+        
+        Alamofire.request(url, parameters: parameters).responseJSON { response in
 //            print("RESPONSE REQUEST")
 //            print(response.request)  // original URL request
             print("RESPONSE RESPONSE!")
-            print(response.response) // HTTP URL response
+            print(response.response!) // HTTP URL response
             print("RESPONSE DATA!")
-            print(response.data)     // server data
+            print(response.data!)     // server data
             print("RESPONSE RESULT!")
             print(response.result)   // result of response serialization
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
+            
+            self.optimal_route_object = JSON(response.result.value!)
+            json_return_object = JSON(response.result.value!)
+            
+            self.performSegue(withIdentifier: "goToItinerary", sender: nil)
+            
+            
+            
         }
+        return json_return_object
     }
 
 }

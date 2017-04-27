@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AB2662162450390DD830BA30CEC06EBF2DD73F80",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "12C5DF8D9FD48BFB228A6DCA150D0490611DFFFB" : 9223372036854775807,
+    "AB2662162450390DD830BA30CEC06EBF2DD73F80" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4B5FC008-D379-44BD-9FB2-BD056BA70F98",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "12C5DF8D9FD48BFB228A6DCA150D0490611DFFFB" : "expanding-collection\/",
+    "AB2662162450390DD830BA30CEC06EBF2DD73F80" : "iTravel\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iTravel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iTravel.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ramotion\/expanding-collection.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "12C5DF8D9FD48BFB228A6DCA150D0490611DFFFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aakash-bhalothia\/iTravel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AB2662162450390DD830BA30CEC06EBF2DD73F80"
+    }
+  ]
+}
