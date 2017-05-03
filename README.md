@@ -1,9 +1,9 @@
 # iTravel
 
 # Instructions:
->Unzip .zip file
->Inside the iTravel folder, open iTravel.xcworkspace
->Run
+1. Unzip .zip file
+2. Inside the iTravel folder, open iTravel.xcworkspace
+3. Run
 
 
 # App instructions
